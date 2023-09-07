@@ -1,0 +1,190 @@
+<div class="container">
+
+
+    <div class="imgcon" *ngIf="x">
+        <div class="img">
+            <button (click)="chatbutton()"><img src="../../assets/Mark_RGB_Orange.png" alt="errr"></button>
+
+        </div>
+    </div>
+
+
+
+    <div class="maincontainer1">
+
+        <div class="main2" *ngIf="y">
+
+
+
+            <div class="main2sub1">
+                <div class="button">
+                    <button (click)="minimizebutton()">-</button>
+                    <div class="agentdata">
+                        <h6>LIVE CHAT</h6>
+                        <p>pre chat survey</p>
+                    </div>
+                    <button (click)="existbutton()">X</button>
+                </div>
+
+            </div>
+
+
+
+
+
+            <form [formGroup]="registerdata" (ngSubmit)="submitdata(registerdata)" *ngIf="b">
+
+                <div class="container1">
+
+
+                    <div class="name ">
+                        <div class="one">
+                            <label for="name">Name:</label><br>
+                            <input type="text" name="name" id="name" formControlName="name" placeholder="NAME"
+                                [class.is-invalid]="registerdata.get('name')?.hasError('required') && registerdata.get('name')?.touched"><br>
+                            <small
+                                *ngIf="registerdata.get('name')?.hasError('required') && registerdata.get('name')?.touched"
+                                class="text-danger">
+                                Name is required
+                            </small>
+    
+                        </div>
+                        </div>
+
+
+
+
+                    <div class="email">
+                        <div class="one">
+                            <label for="name">Email:</label><br>
+
+                            <input type="email" name="email" id="email" formControlName="email" placeholder="EMAIL"
+                                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"><br>
+                            <small *ngIf="registerdata.get('email')?.invalid && registerdata.get('email')?.touched"
+                                class="text-danger">please enter a valid email</small>
+    
+                        </div>
+    
+                        </div>
+                   
+
+
+                    <div class="phone ">
+                        <div class="one">
+                            <label for="name">Phone No.:</label><br>
+
+                            <input type="tel" name="num" id="num" pattern="\d{10}" formControlName="num"
+                                placeholder="Phone no."><br>
+                            <small *ngIf="registerdata.get('num')?.invalid && registerdata.get('num')?.touched"
+                                class="text-danger">please enter a valid phone no.</small>
+    
+                        </div>
+    
+                        </div>
+                      
+
+
+
+                    <div class="allradio one">
+
+                     
+
+
+                        <label for="selectControl" > select your option :</label><br>
+                        <select id="selectControl" formControlName="optiondata">
+                          <option *ngFor="let option of options" [value]="option.value">
+                            {{ option.label }}
+                          </option>
+                        </select>
+
+                      
+                    </div>
+
+
+
+
+
+                    <div class="submit one">
+                        <input type="submit" value="start chat" [disabled]="registerdata.invalid">
+                    </div>
+
+
+                </div>
+            </form>
+
+
+
+
+            <div class="container2" *ngIf="a">
+<div class="container2ofchat">
+    <div class="subconofcontainer2">
+        <div class="msgdataofcon2" *ngFor="let item of messages"
+        [ngClass]='{"message":true, "right":item.position=="right" ,"left":item.position=="left"}'>
+        {{item.content}}
+    </div>
+    </div>
+
+    
+
+    <form [formGroup]="registerdataofcon2" (ngSubmit)="submitdataofcon2($event)">
+        <div class="con2data">
+            <input type="text" name="name" id="name" formControlName="textdata" placeholder="Type Your Message">
+            <button><img src="../../assets/Send-PNG-Image.png" alt="send"></button>
+        </div>
+    </form>
+</div>
+
+                
+
+
+            </div>
+
+
+
+
+
+
+
+            <div *ngIf="z" class="confirmcontainer">
+                <div class="confirmcontainer1">
+    <div class="surebutton">
+                    <div class="data">Are You Sure You Want To End This Chat ?</div>
+                    <div class="buttonss">
+                        <button class="yes" (click)="yesconfirmexistbutton()">yes</button>
+                        <button class="no" (click)="noconfirmexistbutton()">no</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <div class="radio1" *ngFor="let item of options">
+                            <input type="radio" [value]="item.value" id="{{item.label}}" formControlName="optiondata"
+                                required>
+                            <label for="{{item.label}}">{{item.value}}</label>
+                        </div> -->
+
+
+
+
+
+   <!-- <div class="data">
+                            Which Web3 Service You Want Us To Assist?
+                        </div> -->

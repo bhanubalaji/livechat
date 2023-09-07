@@ -1,0 +1,477 @@
+label {
+    font-size: 10px !important;
+}
+
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative; 
+    margin-right: 16px !important;
+}
+
+.imgcon {
+    position: absolute;
+    bottom: 16px;
+    right: 0px;
+    width: 0px;
+    height: 0px;
+    margin-bottom: 50px;
+    margin-right: 43px;
+}
+
+.imgcon .img {
+    position: fixed;
+}
+
+.imgcon .img img {
+    width: 30px;
+    height: 26px;
+
+}
+
+.is-invalid {
+    border-color: rgb(182, 7, 7);
+}
+
+
+
+
+
+.main2 .button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 48px;
+    background-color: rgb(243 243 243);
+    overflow-y: clip;
+
+}
+
+
+.main2 .button button {
+    border: none !important;
+    background-color: rgb(243 243 243);
+  
+    font-size: 1rem;
+}
+
+.main2 .button .agentdata {
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.main2 .button .agentdata p {
+    transform: translateY(-11px);
+    font-size: 9px;
+    text-align: center;
+
+}
+
+.main2 .button .agentdata h6 {
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.maincontainer1 {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.main2 {
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    border: 2px solid #cdc8c8;
+    width: 270px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    box-shadow: -1px 3px 7px -2px rgba(0, 0, 0, 0.4);
+
+}
+
+.main2 .container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 330px;
+    background-color: #fafafa;
+    padding-top: 10px;
+
+}
+
+.main2 .container1 .name {
+
+    height: 150px;
+
+
+}
+
+.main2 .container1 .email {
+    height: 150px;
+
+
+}
+
+.main2 .container1 .phone {
+    height: 150px;
+
+
+}
+
+.main2 .container1 .allradio {
+    height: 150px;
+
+
+
+}
+.main2 .container1 .allradio select{
+
+width: 123px;
+}
+.main2 .container1 .allradio {
+
+    height: 150px;
+
+
+}
+
+.main2 .container1 .submit {
+
+    height: 150px;
+
+}
+
+
+
+
+.main2 .container1 .one {
+    font-size: 10px !important;
+}
+
+
+
+
+
+
+.main2 .confirmcontainer {
+    width: fit-content;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background-color: rgb(60 54 54 / 50%)
+}
+
+.main2bgcolur {
+    background-color: rgb(60 54 54 / 50%);
+}
+.main2 .confirmcontainer{
+    border-radius: 15px;
+    background-color: rgb(60 54 54 / 50%);
+    margin-bottom: 15.5px;
+    height: 60vh;
+
+}
+
+.main2 .confirmcontainer .surebutton {
+    background-color: white;
+    margin: 18vh 31px;
+    padding: 0px -1px;
+    border-radius: 12px;
+    width: 206px;
+}
+
+.main2 .confirmcontainer .surebutton .data {
+    text-align: center;
+    font-size: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.main2 .confirmcontainer .surebutton .buttonss{
+    background-color: white !important;
+    height: 46px;
+}
+
+.main2 .confirmcontainer .surebutton .buttonss .yes {
+
+    background-color: rgb(171 163 163);
+    width: 85px;
+    border-radius: 31px;
+    color: white;
+    margin-right: 11px;
+    margin-left: 10px;
+    border: none;
+}
+
+.main2 .confirmcontainer .surebutton .buttonss .no {
+    background-color: rgb(201, 55, 80);
+    width: 85px;
+    border-radius: 31px;
+    color: white;
+    border: none;
+
+}
+
+.main2 .main2sub1{
+    overflow-y: clip;
+}
+
+
+
+
+.main2 .container2 .subconofcontainer2{
+    height: 40vh;
+margin-bottom: 2vh;
+
+}
+.main2 .container2  .con2data input {
+
+
+    border-radius: 15px;
+    background-color: rgb(243 243 243);
+    border: 1px solid rgb(235, 235, 235);
+    width: 80%;
+    margin-left: 12px;
+    outline: none;
+
+}
+.main2 .container2  .con2data input::placeholder{
+ font-size: 10px;
+text-align: center;
+
+}
+.main2 .container2  .con2data button img {
+    width: 27px;
+    height: 22px;
+}
+.main2 .container2  .con2data button  {
+    border: none;
+}
+
+.right {
+    float: right;
+    clear: both;
+    border: 2px;
+    border: 1px solid #e9d9d9;
+    margin-right: 11px;
+    margin-top: 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    padding: 5px 8px;
+    width: 127px;
+    word-wrap: break-word;
+
+}
+
+.left {
+    float: left;
+    clear: both;
+    border: 2px;
+    border: 1px solid #e9d9d9;
+    margin-left: 11px;
+    margin-top: 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    padding: 5px 8px;
+    width: 127px;
+    word-wrap: break-word;
+
+}
+
+/* 
+.main2 .container2 {
+    height: 59vh;
+    width: 260px;
+    position: relative;
+}
+
+.main2 .container2 .con2data {
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    width: 239px;
+    margin-bottom: 14px;
+    height: 15vh;
+
+}
+
+.main2 .container2 .subconofcontainer2 {
+
+    border: 1px solid #ddd9d9;
+    width: 238px;
+    height: 42vh;
+
+    overflow-y: scroll;
+
+}
+
+.main2 .container2 .con2data input {
+    width: 150px;
+
+}
+
+
+.right {
+    float: right;
+    clear: both;
+    border: 2px;
+    border: 2px solid #e9d9d9;
+    margin-right: 27px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+}
+
+.left {
+    float: right;
+    clear: both;
+    border: 2px;
+    border: 2px solid #e9d9d9;
+    margin-left: 27px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .main2 .container1 .one{
+    border-radius: 10px;
+    border: 1px solid black;
+} */
+
+
+
+
+
+/* 
+.main2 .container1 .one input {
+    width: 141px;
+    border: 2px solid #e3e3e3;
+    border-radius: 20px;
+    margin-bottom: 10px;
+
+}
+
+.main2 .container1 .submit {
+    text-align: center;
+
+}
+.main2 .container1 .submit input {
+    background-color: aqua;
+}
+
+.main2 .container1 .allradio {
+
+    margin-left: 9px;
+
+}
+
+.main2 .container1 .allradio select {
+    width: 114px;
+    margin-bottom: 13px;
+
+}
+
+.main2 .button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 18px;
+}
+
+.main2 .button button {
+    border-radius: 10px;
+    border: 2px solid #ababab;
+   
+}
+
+
+
+
+
+.main2 .confirmcontainer {
+    width: fit-content;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background-color: rgb(60 54 54 / 50%)
+}
+
+.main2bgcolur {
+    background-color: rgb(60 54 54 / 50%);
+}
+
+.main2 .confirmcontainer .surebutton {
+    background-color: aliceblue;
+    border: 2px solid rgb(236, 227, 227);
+    margin: 182px 44px;
+    padding: 12px 17px;
+    border-radius: 12px;
+    width: 152px;
+}
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

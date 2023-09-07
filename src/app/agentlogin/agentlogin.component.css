@@ -1,0 +1,49 @@
+.main{
+    border: 2px solid black;
+    width: 100vw;
+    height: 100vh;
+    background-color: #bbbbef;
+
+}
+.main .con1{
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    width: 287px;
+    height: 255px;
+    margin: 26vh 50vw;
+    align-items: center;
+    background-color: white;
+    border-radius: 9px;
+}
+
+.main .con1data{
+margin: 15px;
+}
+.main .con1data label{
+    font-size: 12px;
+    }
+.main .con1data .email input{
+
+    background-color: #e5e5e5;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+
+    }
+    .main .con1data .pass input{
+
+        background-color: #e5e5e5;
+        border: none;
+        outline: none;
+        border-radius: 6px;
+    
+        }
+        .main .con1data .submit{
+      width: 184px;
+    background-color: #3f3fd5;
+    outline: none;
+    border: none;
+    color: wheat;
+    border-radius: 5px;
+}

@@ -1,0 +1,343 @@
+.main .container{
+    display: flex;
+    max-width: 1301px !important; 
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+/* .nav{
+    border: 2px solid black;
+    width: 100vw;
+    height: 10vh;
+    position: sticky;
+    top: 0px;
+
+} */
+.container1{
+  border: 1px solid #a9a7a7;
+    height: 100vh;
+ flex: 1;
+ position: relative;
+ border-top: none;
+ overflow-y: auto;
+}
+.container1onbuttonclick{
+  border: 1px solid #a9a7a7;
+  height: 100vh;
+flex: 0.5;
+position: relative;
+background-color: #f1f1f1;
+
+}
+.sidebar{
+width: 40px;
+height: 100vh;
+background-color: black;
+display: flex;
+flex-direction: column;
+position: relative;
+}
+
+
+.rightsidebar{
+  width: 33px;
+  height: 100vh;
+  background-color: #f1f1f1;
+
+  
+  }
+.con1{
+    height: 100vh;
+    flex: 0.35;
+    background-color: #f1f1f1;
+}
+/* 
+.inputdata{
+  position: absolute;
+  bottom: 0px;
+} */
+
+
+.right {
+ float: right;
+ clear: both;
+}
+
+.left {
+  float: left;
+  clear: both;
+}  
+ .footinputcon .datacontainer .messagedata{
+  width: 174px;
+  max-width: 100%;
+  word-wrap: break-word;
+  white-space: normal;
+  padding: 6px;
+  margin: 10px 10px;
+  border-radius: 20px;
+  background-color: #4284f5;
+  color: white;
+  font-size: 12px;
+ }
+
+ .footinputcon .footinputconsub1{
+  height: 78vh;
+  overflow-y: auto;
+ }
+
+
+ .footinputcon .container1messagebox{
+  height: 93px;
+ }
+
+
+ .footinputcon .container1messagebox .conatiner1noxofinputsubmit{
+  border: 1px solid #a9a7a7;
+  display: flex;
+  flex-direction: column;
+  margin: 13px 18px;
+  margin-bottom: 10px;
+  border-radius: 7px;
+ }
+ .footinputcon .container1messagebox .conatiner1noxofinputsubmit .conatiner1messageboxinput input{
+  height: 37px;
+    width: 100%;
+    border: none;
+font-size: 10px;
+outline: none;
+ }
+
+ .footinputcon .container1messagebox .conatiner1noxofinputsubmit .messageboxsendbutton button{
+
+ height: 22px;
+ font-size: 10px;
+ color: white;
+ background-color: skyblue;
+ border: none;
+ margin-right: 5px;
+ border-radius: 5px;
+ margin-bottom: 2px;
+ width: 50px;
+}
+
+ .footinputcon .container1messagebox .conatiner1noxofinputsubmit .messageboxsendbutton {
+  align-self: flex-end;
+   }
+  
+  
+ .container .sidebar ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+padding-left: 0px !important;
+
+ }
+ .container .sidebar ul .imgsidebardata{
+
+ width: 100%;
+ height: 35px;
+ position: relative;
+ overflow-y: clip;
+ }
+
+
+ .container .sidebar ul #imgsidebardata{
+  position: absolute;
+  bottom: 0px;
+ }
+
+
+
+ .container .sidebar ul .imgsidebardata:hover{
+  background-color: #4c4c4c;
+  cursor: pointer;
+
+ }
+ .container .sidebar ul .imgsidebardata:hover img{
+  filter: none;
+  }
+  .container .sidebar ul .imgsidebardata img{
+    filter: grayscale(100%); /* Convert the image to grayscale initially */
+    transition: filter 0.3s;
+      }
+  .container .sidebar ul .imgsidebardata:hover p{
+ 
+ color:white
+  }
+
+  .active{
+    background-color: #4c4c4c;
+    cursor: pointer;
+    color:white
+  
+   }
+ .active img{
+    filter: none;
+    }
+    .paraactive{
+   
+   color:white !important;
+    }
+
+ .container .sidebar ul .imgsidebardata img{
+
+ width: 15px;
+ text-align: center;
+ margin-left: 13px;
+ }
+
+ .container .sidebar ul .imgsidebardata p{
+  font-size: 9px;
+  position: absolute;
+  top: 18px;
+  left: 12px;
+  margin-bottom: 0px;
+  color: #ada0a0;
+ }
+
+ .container .sidebar ul .imgsidebardata .traffic{
+
+  top: 21px;
+  left: 10px;
+
+ }
+
+ .container .sidebar ul li{
+
+ margin-bottom: 20px;
+}
+.con1 .smallhedcontainer{
+  height: 36px;
+  border-bottom: 1px solid #a9a7a7;
+display: flex;
+align-items: center;
+}
+
+.container1onbuttonclick .smallhedcontainer{
+  height: 36px;
+  border-bottom: 1px solid #a9a7a7;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+h6{
+  font-size: 14px;
+  overflow-y: clip;
+}
+
+.con1 .smallhedcontainer h6{
+  margin-left: 11px;
+}
+.container1 .smallhedcontainer{
+height: 35px;
+border-bottom: 1px solid #a9a7a7;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.sigdebarrightimgdata  img{
+  width: 15px;
+  margin: 8px 9px;
+
+}
+.sigdebarrightimgdata  .existbuttonofsidebar{
+  width: 10px !important;
+
+}
+
+
+
+.con1 .con1clientdata{
+  padding: 10px 10px;
+  background-color: #d5d5d5;
+  margin-bottom: 10px;
+  width: 1;
+  margin-left: -20px;
+  margin-right: -20px;
+  cursor: pointer;
+}
+.con1 .con1clientdata:hover{
+  background-color: #f2ecec;
+
+
+}
+
+.accordion-button{
+  background-color: white !important;
+  height: 52px;
+  font-size: 15px;
+}
+
+
+.container1onbuttonclick .sidebardetailscon1{
+  height: 31px;
+    padding: 3px 6px;
+}
+
+
+.container1onbuttonclick .sidebardetailscon2{
+  border: 1px solid #a9a7a7;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 13px;
+  padding: 8px 8px;
+  margin-bottom: 10px;
+
+}
+.container1onbuttonclick .sidebardetailscon2 .sidebardetailscon2clientdata img{
+  width: 17px;
+}
+.container1onbuttonclick .sidebardetailscon2 .sidebardetailscon2clientdata .dataofclient{
+  font-size: 13px;
+
+}
+.container1onbuttonclick .sidebardetailscon2 ul  .currenttime{
+
+font-size: 12px;
+}
+.container1onbuttonclick .sidebardetailscon2 ul  li{
+
+  font-size: 14px;
+  }
+.container1onbuttonclick .sidebardetailscon3 ul li{
+
+  font-size: 13px;
+  }
+
+
+
+
+.container1onbuttonclick .sidebardetailscon3{
+  border: 1px solid #a9a7a7;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 13px;
+  padding: 8px 8px;
+  margin-bottom: 10px;
+
+}
+
+
+
+
+.con1 .con1clientdata img{
+  width: 22px;
+
+}
+.con1 .con1clientdata .dataofclient{
+  font-size: 14px;
+}
+
+
+
+
+
+
+.accordion .accordion-item .accordion-button{
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* .accordion .accordion-item  .accordion-button::after{
+  width: 1rem !important;
+} */

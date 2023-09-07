@@ -1,0 +1,162 @@
+<div class="main">
+
+
+    <div class="container">
+
+        <div class="sidebar">
+            <ul class="sidebar1">
+                <div class="imgsidebardata" (click)="imgsidebardata()" [ngClass]="{'active':imgsidebardatachange}">
+                    <li><img src="../../assets/chat-icon.png" alt="img1"></li>
+                    <p [ngClass]="{'paraactive':imgsidebardatachange}">chat</p>
+                </div>
+                <div class="imgsidebardata" (click)="imgsidebardata1()" [ngClass]="{'active':imgsidebardatachange1}">
+                    <li><img src="../../assets/traffic-icon.png" alt="img1"></li>
+                    <p class="traffic">traffic</p>
+                </div>
+                <div id="imgsidebardata" class="imgsidebardata" (click)="imgsidebardata2()" [ngClass]="{'active':imgsidebardatachange2}">
+                    <li><img src="../../assets/logout-icon.png" alt="img1"></li>
+                    <p class="traffic">logout</p>
+                </div>
+               
+
+            </ul>
+          
+        </div>
+
+
+
+
+        <div class="con1">
+            <div class="smallhedcontainer">
+                <h6>Chats</h6>
+            </div>
+
+
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            My Chats
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div *ngFor="let item of clienddataarray" class="con1clientdata" (click)="clickbuttonclienddataarray(item.email)">
+                                <img src="{{item.src}}" alt="err">
+                             <span class="dataofclient"> {{item.name}}</span>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="container1">
+
+            <div class="smallhedcontainer">
+                <h6>Chats feed</h6>
+            </div>
+
+
+            <div class="footinputcon">
+                <div class="footinputconsub1">
+                    <div class="datacontainer" *ngFor="let message of messages">
+                        <div
+                            [ngClass]="{'message': true, 'right': message.position === 'right', 'left': message.position === 'left'}">
+                            <div class="messagedata">
+                                {{ message.content }}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <form (submit)="sendMessage($event)" class="inputdata">
+                    <div class="container1messagebox">
+                        <div class="conatiner1noxofinputsubmit">
+                            <div class="conatiner1messageboxinput">
+                                <input type="text" [(ngModel)]="inputmessage" placeholder="Type your message..."
+                                    name="message">
+
+                            </div>
+                            <div class="messageboxsendbutton">
+                                <button type="submit">Send</button>
+<span (click)="endclientchat()">end</span>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+
+
+
+
+        <div class="container1onbuttonclick" *ngIf="x">
+
+            <div class="smallhedcontainer">
+                <div class="sigdebarrightimgdata" (click)="rightsideimgbutton()">
+                    <img src="../../assets/profile-icon.png" alt="img1">
+                </div>
+
+                <div class="sigdebarrightimgdata" (click)="rightsideimgbuttonofexist()">
+                    <img class="existbuttonofsidebar" src="../../assets/cross-icon.png" alt="img1">
+                </div>
+            </div>
+
+
+            <div class="sidebardetailscon1">
+                <h6>Details</h6>
+            </div>
+
+            <div class="sidebardetailscon2">
+                <h6>General Info</h6>
+                <div  class="sidebardetailscon2clientdata">
+                    <img src="{{currentclienddataarray.src}}" alt="">
+                 <span class="dataofclient"> {{currentclienddataarray.name}}</span>  
+                    
+                </div>
+                <ul>
+                    <li class="currenttime" >{{currenttime}} </li>
+                    <li>location</li>
+                </ul>
+
+            </div>
+
+            <div class="sidebardetailscon3">
+                <h6>Pre-chat Info</h6>
+                <ul >
+                    <li>name:{{currentclienddataarray.name}}</li>
+                    <li>email: {{currentclienddataarray.email}} </li>
+                </ul>
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <div class="rightsidebar" *ngIf="rightsidebarimage">
+            <div class="sigdebarrightimgdata" (click)="rightsideimgbutton()">
+                <img src="../../assets/profile-icon.png" alt="img1">
+            </div>
+        </div>
+
+
+
+
+    </div>

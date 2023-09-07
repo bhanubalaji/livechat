@@ -1,0 +1,36 @@
+<div class="main">
+
+
+    <form [formGroup]="registerdata" (ngSubmit)="submitdata(registerdata)">
+        <div class="con1">
+            <div class="con1data">
+                <label for="email">Email:</label>
+                <div class="email">
+                    <input type="email" name="email" id="email" formControlName="email" placeholder="email"  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"> <br>
+                    <small   *ngIf="registerdata.get('email')?.hasError('required') && registerdata.get('email')?.touched"
+                    class="text-danger">
+               please enter valid email
+                </small>
+                </div>
+            </div>
+
+            <div class="con1data">
+                <label for="pass">Password:</label>
+                <div class="pass">
+                    <input type="password" name="pass" id="pass" formControlName="pass" placeholder="********"> <br>
+                    <small   *ngIf="registerdata.get('pass')?.hasError('required') && registerdata.get('pass')?.touched"
+                    class="text-danger">
+                   please enter valid password
+                    
+                </small>
+                </div>
+            </div>
+            <div class="con1data">
+                <input class="submit" type="submit" value="Login">
+            </div>
+        </div>
+    </form>
+
+
+
+</div>
