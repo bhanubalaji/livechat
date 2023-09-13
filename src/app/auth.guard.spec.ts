@@ -1,17 +1,41 @@
-import { TestBed } from '@angular/core/testing';
-import { CanActivateFn } from '@angular/router';
+// import { TestBed } from '@angular/core/testing';
+// import { CanActivateFn } from '@angular/router';
 
-import { authGuard } from './auth.guard';
+// import { AuthGuard } from './auth.guard';
 
-describe('authGuard', () => {
-  const executeGuard: CanActivateFn = (...guardParameters) => 
-      TestBed.runInInjectionContext(() => authGuard(...guardParameters));
+// describe('authGuard', () => {
+//   const executeGuard: CanActivateFn = (...guardParameters) => 
+//       TestBed.runInInjectionContext(() => new AuthGuard(...guardParameters));
+
+//   beforeEach(() => {
+//     TestBed.configureTestingModule({});
+//   });
+
+//   it('should be created', () => {
+//     expect(executeGuard).toBeTruthy();
+//   });
+// });
+
+
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { AuthGuard } from './auth.guard';
+
+
+describe('UserpageComponent', () => {
+  let component:AuthGuard ;
+  let fixture: ComponentFixture<AuthGuard >;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      declarations: [AuthGuard ]
+    });
+    fixture = TestBed.createComponent(AuthGuard );
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
-  it('should be created', () => {
-    expect(executeGuard).toBeTruthy();
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

@@ -1,5 +1,5 @@
 label {
-    font-size: 10px !important;
+    font-size: 16px !important;
 }
 
 
@@ -7,7 +7,7 @@ label {
     width: 100vw;
     height: 100vh;
     position: relative; 
-    margin-right: 16px !important;
+    max-width: 1897px !important;
 }
 
 .imgcon {
@@ -16,17 +16,20 @@ label {
     right: 0px;
     width: 0px;
     height: 0px;
-    margin-bottom: 50px;
-    margin-right: 43px;
+    margin-bottom: 78px;
+    margin-right: 96px;
 }
 
-.imgcon .img {
+.imgcon .img  {
     position: fixed;
 }
-
+.imgcon .img button{
+ border: none;
+ background-color: white;
+}
 .imgcon .img img {
-    width: 30px;
-    height: 26px;
+    width: 80px;
+    height: 80px;
 
 }
 
@@ -42,8 +45,8 @@ label {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    height: 48px;
-    background-color: rgb(243 243 243);
+    height: 63px;
+    background-color: rgba(104, 53, 154, 1);
     overflow-y: clip;
 
 }
@@ -51,26 +54,32 @@ label {
 
 .main2 .button button {
     border: none !important;
-    background-color: rgb(243 243 243);
-  
-    font-size: 1rem;
+    background-color: rgba(104, 53, 154, 1);
+   font-size: 1.5rem;
+   color: white;
 }
+.main2 .button .xinto{
+    font-size: 1.2rem;
 
+}
 .main2 .button .agentdata {
     overflow: hidden;
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 .main2 .button .agentdata p {
     transform: translateY(-11px);
-    font-size: 9px;
+    font-size: 11px;
     text-align: center;
+    color: white;
 
 }
 
 .main2 .button .agentdata h6 {
-    font-size: 14px;
+    font-size: 18px;
     overflow: hidden;
+    color: white;
+
 }
 
 .maincontainer1 {
@@ -84,7 +93,7 @@ label {
     flex-direction: column;
     height: 60vh;
     border: 2px solid #cdc8c8;
-    width: 270px;
+    width: 375px;
     margin-bottom: 15px;
     border-radius: 15px;
     box-shadow: -1px 3px 7px -2px rgba(0, 0, 0, 0.4);
@@ -95,9 +104,10 @@ label {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 330px;
+    height: 516px;
     background-color: #fafafa;
-    padding-top: 10px;
+    padding-top: 20px;
+
 
 }
 
@@ -128,7 +138,7 @@ label {
 }
 .main2 .container1 .allradio select{
 
-width: 123px;
+width: 164px;
 }
 .main2 .container1 .allradio {
 
@@ -147,7 +157,7 @@ width: 123px;
 
 
 .main2 .container1 .one {
-    font-size: 10px !important;
+    font-size: 14px !important;
 }
 
 
@@ -156,7 +166,7 @@ width: 123px;
 
 
 .main2 .confirmcontainer {
-    width: fit-content;
+    width: 100%;
     position: absolute;
     bottom: 0px;
     right: 0px;
@@ -176,15 +186,15 @@ width: 123px;
 
 .main2 .confirmcontainer .surebutton {
     background-color: white;
-    margin: 18vh 31px;
+    margin: 23vh 31px;
     padding: 0px -1px;
     border-radius: 12px;
-    width: 206px;
+    width: 311px;
 }
 
 .main2 .confirmcontainer .surebutton .data {
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom: 10px;
     margin-top: 10px;
 }
@@ -192,21 +202,26 @@ width: 123px;
 .main2 .confirmcontainer .surebutton .buttonss{
     background-color: white !important;
     height: 46px;
+    text-align: center;
+    margin-right: 10px;
 }
 
 .main2 .confirmcontainer .surebutton .buttonss .yes {
 
-    background-color: rgb(171 163 163);
-    width: 85px;
+  
+    background-color: rgb(64 215 26);
+    width: 90px;
     border-radius: 31px;
     color: white;
-    margin-right: 11px;
+    margin-right: 29px;
     margin-left: 10px;
     border: none;
+    text-align: center;
+    padding-bottom: 4px;
 }
 
 .main2 .confirmcontainer .surebutton .buttonss .no {
-    background-color: rgb(201, 55, 80);
+    background-color: rgb(243 49 49);
     width: 85px;
     border-radius: 31px;
     color: white;
@@ -222,13 +237,30 @@ width: 123px;
 
 
 .main2 .container2 .subconofcontainer2{
-    height: 40vh;
+    height: 44vh;
 margin-bottom: 2vh;
 
 }
+
+.main2 .container2 .msgoftying{
+    height: 24px;
+    overflow-y: clip;
+
+}
+.main2 .container2 .msgoftying p{
+
+font-size: 11px;
+    text-align: center;
+    width: 96px;
+    padding-bottom: 2px;
+    margin-left: 119px;
+    background-color: #5e5c5c0f;
+    border-radius: 8px;
+}
+
 .main2 .container2  .con2data input {
 
-
+    height:35px;
     border-radius: 15px;
     background-color: rgb(243 243 243);
     border: 1px solid rgb(235, 235, 235);
@@ -243,11 +275,13 @@ text-align: center;
 
 }
 .main2 .container2  .con2data button img {
-    width: 27px;
-    height: 22px;
+    width: 36px;
+    height: 29px;
+    margin-bottom: 2px
 }
 .main2 .container2  .con2data button  {
     border: none;
+    background-color: #97b6ff00;
 }
 
 .right {
@@ -258,10 +292,12 @@ text-align: center;
     margin-right: 11px;
     margin-top: 12px;
     border-radius: 10px;
-    font-size: 12px;
+    font-size: 14px;
     padding: 5px 8px;
     width: 127px;
     word-wrap: break-word;
+    background-color: rgba(104, 53, 154, 1);
+    color: white
 
 }
 
@@ -273,12 +309,22 @@ text-align: center;
     margin-left: 11px;
     margin-top: 12px;
     border-radius: 10px;
-    font-size: 12px;
+    font-size: 14px;
     padding: 5px 8px;
     width: 127px;
     word-wrap: break-word;
-
+    background-color: rgb(231 192 255);
 }
+
+
+.onlinegreen{
+   color: white;
+  }
+  .offlinered{
+    color: #d5ced0;
+  }
+  
+
 
 /* 
 .main2 .container2 {

@@ -11,8 +11,11 @@ export class AuthGuard implements CanActivate {
 
   canActivate(): boolean {
     const isAuthenticated = sessionStorage.getItem('agent') !== null;
+    // const isAuthenticatedofanother = sessionStorage.getItem('agent') !== null;
+
 
     if (isAuthenticated) {
+    
       return true;
     } else {
       this.router.navigate(['agentlogin']);

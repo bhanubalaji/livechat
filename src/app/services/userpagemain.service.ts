@@ -20,8 +20,14 @@ export class UserpagemainService {
   }
 
 
+  submitdataofclientid(responsedataid:any){
+    return this.http.post<any>(`http://localhost:4000/api/bhanuforonline`,{responsedataid})
 
+  }
 
+  clientgetdatabyid(id:any){
+    return this.http.post<any>(`http://localhost:4000/api/clientdatagetbyid`,{id})
 
+  }
   
 }

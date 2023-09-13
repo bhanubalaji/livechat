@@ -24,14 +24,41 @@ export class UserpageService {
   }
 
 
-  sendname(name:any) {
-    console.log(name)
-    this.socket.emit('userjoin', name);
+  sendname(data:any) {
+    console.log(data)
+    this.socket.emit('userjoin', data);
   }
 
   onMessagename(callback: (name: any) => void) {
     this.socket.on('userjoin', callback);
     // console.log(name)
+
+}
+startTyping(roomId:any) {
+  this.socket.emit('typing', roomId);
+}
+
+stopTyping(roomId:any) {
+  this.socket.emit('stopTyping', roomId);
+}
+
+
+onUserTyping(callback:any) {
+  this.socket.on('userTyping', (userId) => {
+    callback(userId);
+  });
+}
+
+onUserStoppedTyping(callback:any) {
+  this.socket.on('userStoppedTyping', (userId) => {
+    callback(userId);
+  });
+}
+
+
+onMessageofstatus(callback: (status: any) => void) {
+  this.socket.on('status', callback);
+  // console.log(name)
 
 }
 }

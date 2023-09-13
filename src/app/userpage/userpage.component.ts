@@ -20,8 +20,13 @@ export class UserpageComponent {
   registerdataofcon2!: FormGroup
   inputmessage: any
   messages: any = []
-  responsedata: any
-
+  responsedataid: any
+  responsedataname: any
+  onlinestatus: any
+agentonlinestatus:any
+onlinestatusofagenttrufalse:boolean=false
+agentofflinered:any
+typingmsg:any
   options = [
     { value: 'option1', label: 'Option 1' },
     { value: 'option2', label: 'Option 2' },
@@ -29,7 +34,7 @@ export class UserpageComponent {
     { value: 'option4', label: 'Option 4' },
     { value: 'option5', label: 'Option 5' }
   ];
-  constructor(private fs: FormBuilder, private router: Router, private socketService:UserpageService,private mainservice:UserpagemainService) { }
+  constructor(private fs: FormBuilder, private router: Router, private socketService: UserpageService, private mainservice: UserpagemainService) { }
 
 
   append(message: any, position: any) {
@@ -40,13 +45,13 @@ export class UserpageComponent {
 
   submitdataofcon2(event: Event) {
     event.preventDefault();
-     const message = this.registerdataofcon2.get('textdata')?.value
+    const message = this.registerdataofcon2.get('textdata')?.value
     if (message !== '') {
       this.append(`You: ${message}`, 'right');
-      var data={
-        id:this.responsedata,
-         name:this.responsedata,
-         message :message
+      var data = {
+        id: this. responsedataid,
+        name: this.responsedataname,
+        message: message
       }
       this.socketService.sendMessage(data);
       this.registerdataofcon2.get('textdata')?.setValue(' ')
@@ -59,11 +64,105 @@ export class UserpageComponent {
 
   ngOnInit() {
 
+  
+    this.socketService.onUserTyping((userId:any) => {
+      console.log(userId)
+      if(userId.roomId){
+        this.typingmsg='Typing....'
+        // for(let item of this.clienddataarray)
+        // if(item._id==userId.roomId){
+        //   item.typingmsg= this.typingmsg
+        // }
+      }
+   
+   
+       });
+   
+       this.socketService.onUserStoppedTyping((userId:any) => {
+      console.log(userId)
+
+      if(userId.roomId){
+
+        this.typingmsg=''
+        // for(let item of this.clienddataarray)
+        // if(item._id==userId.roomId){
+        //   item.typingmsg= this.typingmsg
+        
+        // }
+      }
+   
+       });
+
+
+    this.socketService.onUserTyping((userId:any) => {
+      console.log(`User ${userId} is typing...`);
+      // Update UI to show typing indicator for user with userId
+    });
+
+    this.socketService.onUserStoppedTyping((userId:any) => {
+      console.log(`User ${userId} stopped typing.`);
+      // Update UI to remove typing indicator for user with userId
+    });
+
+
+    let sessionclientdata = sessionStorage.getItem('client')
+    if (sessionclientdata == null){
+      this.agentofflinered=false
+    } 
+    if (sessionclientdata !== null) {
+      this.a = true
+      this.z = false
+      this.b = false
+      this.y = true
+      this.x = false
+      console.log(sessionclientdata)
+      this.agentofflinered=true
+
+      if(this.onlinestatusofagenttrufalse==true){
+        this.agentonlinestatus='agent is online'
+      }else{
+        this.agentonlinestatus='agent is offline'
+      }
+
+      this.mainservice.clientgetdatabyid(sessionclientdata).subscribe((res: any) => {
+        console.log(res)
+        let messagearra = res.mydatas.allmessagedata
+        this.responsedataid = res.mydatas._id
+        this.responsedataname= res.mydatas.name
+        let data ={
+          name:this.responsedataname,
+          id:this.responsedataid
+        }
+   
+      this.socketService.sendname(data);
+
+        console.log(messagearra)
+      this.append(`hi ${res.mydatas.name} once again Welcome`, 'right'); //for display name of client
+
+      //   for (let item of messagearra) {
+      //       if(item.position=='right'){
+      //         item.position='left'
+      //       }else{
+      //         item.position='right'
+      //        let array= item.content.split(':')
+      //        if(array.length>1){
+      //         var x= array.pop()
+      //         item.content=`you : ${x}`
+      //        }
+
+      //       }
+      //       this.messages.push(item)
+      //   }
+      })
+    }
+
+
+
     this.registerdata = this.fs.group({
-      name:  ['', [Validators.required]],
-      email:  ['', [Validators.required]],
-      num:  ['',[Validators.required]],
-      optiondata:  ['',[Validators.required]],
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      num: ['', [Validators.required]],
+      optiondata: ['', [Validators.required]],
     })
 
 
@@ -73,13 +172,13 @@ export class UserpageComponent {
       textdata: [''],
     })
 
-   
+
 
 
 
     this.socketService.onMessageReceived((message) => {
       console.log(message)
-       this.append(`${message.name}:${message.message}`, 'left');
+      this.append(`${message.name}:${message.message}`, 'left');
     });
 
 
@@ -87,9 +186,32 @@ export class UserpageComponent {
 
     this.socketService.onMessagename((name) => {
       this.append(`${name.name} joined the chat`, 'left')
+      // var dataofstatus={
+      //   name:name.name,
+      //   this.onlinestatusofagenttrufalse=name.onlinestatusage
+      // // }
+      // if(name.onlinestatusage==true){
+      //   this.agentonlinestatus='agent is online'
+      // }else{
+      //   this.agentonlinestatus='agent is offline'
+      // }
+ 
     })
-   
 
+    this.socketService.onMessageofstatus((status) => {
+      // this.append(`${name.name} joined the chat`, 'left')
+      // var dataofstatus={
+      //   name:name.name,
+      console.log(status.status.onlinestatusage)
+        this.onlinestatusofagenttrufalse=status.status.onlinestatusage
+      // }
+      if(status.status.onlinestatusage==true){
+        this.agentonlinestatus='agent is online'
+      }else{
+        this.agentonlinestatus='agent is offline'
+      }
+ 
+    })
 
 
 
@@ -103,11 +225,14 @@ export class UserpageComponent {
 
   submitdata(data: any) {
     console.log(data.value)
-    this.a=true
+    this.a = true
     this.z = false
     this.b = false
     this.y = true
     this.x = false
+    this.agentofflinered=true
+    this.agentonlinestatus='agent is offline'   //default offline messge at user
+
     var nameValue1 = this.registerdata.get('name')?.value;
     var nameValue2 = this.registerdata.get('email')?.value;
     var nameValue3 = this.registerdata.get('num')?.value;
@@ -117,20 +242,38 @@ export class UserpageComponent {
       email: nameValue2,
       phno: nameValue3,
       options: nameValue4,
-      allmessagedata:[ {content: 'welcome', position: 'right'} ]
+      allmessagedata: [],
+      onlinestaus: ''
     };
 
 
     var formDataJson = JSON.stringify(formData);
-     this.mainservice.submitdatas(formDataJson).subscribe((res: any) => {
+    this.mainservice.submitdatas(formDataJson).subscribe((res: any) => {
       console.log(res)
-      
+      this.responsedataid = res.data
+      sessionStorage.setItem('client', res.data)
       var x = JSON.parse(res.user);
-      this.responsedata = x.name
-      console.log(this.responsedata)
-      this.append(`hi ${this.responsedata} Welcome`, 'right');
-      this.socketService.sendname(this.responsedata);
-     })
+      this.responsedataname = x.name
+      console.log(this.responsedataname)
+      this.append(`hi ${this.responsedataname} Welcome`, 'right'); //for display name of client
+      let data ={
+        name:this.responsedataname,
+        id:this.responsedataid
+      }
+      this.socketService.sendname(data);
+      this.onlinestatus = true
+      let dataforid = {
+        responseid: this.responsedataid,
+        online: this.onlinestatus
+      }
+      this.mainservice.submitdataofclientid(dataforid).subscribe((res: any) => {
+        console.log(res)
+      })
+
+    })
+
+
+
   }
 
 
@@ -139,8 +282,8 @@ export class UserpageComponent {
     this.x = true
     this.y = false
     this.b = false
-    
-  
+
+
   }
 
 
@@ -148,19 +291,19 @@ export class UserpageComponent {
   existbutton() {
     console.log("1")
     this.z = true
- }
-
-
- chatbutton() {
-  this.x = false
-  this.y = true
-  this.b = true
-  if(this.a==true){
-    this.a = true
-  this.b = false
-
   }
-}
+
+
+  chatbutton() {
+    this.x = false
+    this.y = true
+    this.b = true
+    if (this.a == true) {
+      this.a = true
+      this.b = false
+
+    }
+  }
 
 
 
@@ -168,33 +311,53 @@ export class UserpageComponent {
 
   yesconfirmexistbutton() {
     this.registerdata.setValue({
-      name:  [''],
-      email:  [''],
-      num:  [''],
-      optiondata:  [''],
+      name: [''],
+      email: [''],
+      num: [''],
+      optiondata: [''],
     })
-  this.messages = []
-    this.a=false
+    this.messages = []
+    this.a = false
     this.z = false
     this.b = false
     this.y = false
     this.x = true
+    this.agentofflinered=false
 
-
+    var dataofclientidinsession = sessionStorage.getItem('client')
+    if (dataofclientidinsession !== null) {
+      this.responsedataid = dataofclientidinsession
     }
+    sessionStorage.removeItem('client')
+
+    this.onlinestatus = false
+    let dataforid = {
+      responseid: this.responsedataid,
+      online: this.onlinestatus
+    }
+    this.mainservice.submitdataofclientid(dataforid).subscribe((res: any) => {
+      console.log(res)
+    })
+ 
+
+  }
 
 
-    
+
 
   noconfirmexistbutton() {
     this.z = false
   }
 
 
+  onFocus(){
+    this.socketService.startTyping(this.responsedataid);
 
+  }
 
-
-
+onBlur(){
+  this.socketService.stopTyping(this.responsedataid);
+}
 }
 
 

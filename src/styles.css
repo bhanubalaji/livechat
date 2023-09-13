@@ -3,3 +3,44 @@
     overflow-x: hidden;
     margin: 0px;
 }
+
+.con1 .con1clientdata .dataofclient{
+    font-size: 19px;
+    margin-left: 9px;
+  }
+  .container1 .smallhedcontainer .online{
+    font-size: 11px;
+  }
+  .accordion .accordion-item .accordion-button{
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .con1 .con1clientdata .onlinestatusofall {
+  font-size: 10px;
+  }
+  .typingmsgofuserinagent{
+    font-size: 14px;
+    color: #0a24dd;
+    float: right;
+    transform: translateY(30px);
+  }
+  
+  .accordion-body {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  }
+   .container1onbuttonclick .sidebardetailscon2 .sidebardetailscon2clientdata img{
+    width: 20px;
+  }
+  .container1onbuttonclick .sidebardetailscon2 .sidebardetailscon2clientdata .dataofclient{
+    font-size: 16px;
+  }
+  .container1onbuttonclick .sidebardetailscon2 ul  .currenttime{
+  font-size: 14px;
+  }
+  .container1onbuttonclick .sidebardetailscon2 ul  li{
+    font-size: 15px;
+    }
+  .container1onbuttonclick .sidebardetailscon3 ul li{
+    font-size: 16px;
+    }

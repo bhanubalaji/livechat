@@ -43,9 +43,10 @@
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <div *ngFor="let item of clienddataarray" class="con1clientdata" (click)="clickbuttonclienddataarray(item.email)">
+                            <div *ngFor="let item of clienddataarray" class="con1clientdata" (onchange)="changebutclienddataarray(item._id)" (click)="clickbuttonclienddataarray(item._id)">
                                 <img src="{{item.src}}" alt="err">
-                             <span class="dataofclient"> {{item.name}}</span>  
+                             <span class="dataofclient"> {{item.name | titlecase }}</span>  <span class="typingmsgofuserinagent">{{ item.typingmsg}}</span>
+                             <div  [ngClass]="{ 'onlinegreen': item.onlinestaus=='Online','offlinered': item.onlinestaus=='Offline'}" class="onlinestatusofall">{{item.onlinestaus}}</div>
                             </div>
                         </div>
                     </div>
@@ -55,17 +56,20 @@
         </div>
 
 
+        
+
 
 
         <div class="container1">
 
             <div class="smallhedcontainer">
-                <h6>Chats feed</h6>
+                <h6>{{nameoftheclient | titlecase }}</h6>
+                <div [ngClass]="{ 'onlinegreen': onlinestatusofclient=='Online','offlinered': onlinestatusofclient=='Offline'}" class="online"  >{{onlinestatusofclient}}</div>
             </div>
 
 
             <div class="footinputcon">
-                <div class="footinputconsub1">
+                <div class="footinputconsub1" #msgboxcfootontainer>
                     <div class="datacontainer" *ngFor="let message of messages">
                         <div
                             [ngClass]="{'message': true, 'right': message.position === 'right', 'left': message.position === 'left'}">
@@ -78,17 +82,16 @@
                 </div>
 
 
-                <form (submit)="sendMessage($event)" class="inputdata">
-                    <div class="container1messagebox">
+                <form (submit)="sendMessage($event)" class="inputdata" >
+                    <div class="container1messagebox" *ngIf="inputbuttononload">
                         <div class="conatiner1noxofinputsubmit">
                             <div class="conatiner1messageboxinput">
-                                <input type="text" [(ngModel)]="inputmessage" placeholder="Type your message..."
-                                    name="message">
+                                <input type="text" [(ngModel)]="inputmessage" placeholder="Type your message..." name="message"  (focus)="onFocus()" (blur)="onBlur()" >
 
                             </div>
                             <div class="messageboxsendbutton">
                                 <button type="submit">Send</button>
-<span (click)="endclientchat()">end</span>
+                      <!-- <span (click)="endclientchat()">end</span> -->
                             </div>
                         </div>
 
@@ -140,6 +143,15 @@
                 <ul >
                     <li>name:{{currentclienddataarray.name}}</li>
                     <li>email: {{currentclienddataarray.email}} </li>
+                </ul>
+            </div>
+            <div class="sidebardetailscon3">
+                <h6>Additional Info</h6>
+                <ul >
+                    <li>ip:{{currentclienddataarray.clientIP}}</li>
+                    <li>Browser: {{currentclienddataarray.browserInfo.name}} </li>
+                    <li>Version: {{currentclienddataarray.browserInfo.version}} </li>
+
                 </ul>
             </div>
 

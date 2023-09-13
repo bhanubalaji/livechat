@@ -27,4 +27,33 @@ export class AgentpagesocketService {
   onMessagename(callback: (name: any) => void) {
     this.socket.on('agentuserjoin', callback);
   }
+
+
+
+  onUserTyping(callback:any) {
+    this.socket.on('userTyping', (userId) => {
+      callback(userId);
+    });
+  }
+  
+  onUserStoppedTyping(callback:any) {
+    this.socket.on('userStoppedTyping', (userId) => {
+      callback(userId);
+    });
+  }
+
+
+  startTyping(roomId:any) {
+    this.socket.emit('typing', roomId);
+  }
+  
+  stopTyping(roomId:any) {
+    this.socket.emit('stopTyping', roomId);
+  }
+
+  status(status:any) {
+    console.log(status)
+    this.socket.emit('status', status)
+  }
+
 }

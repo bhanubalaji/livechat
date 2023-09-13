@@ -3,7 +3,7 @@
 
     <div class="imgcon" *ngIf="x">
         <div class="img">
-            <button (click)="chatbutton()"><img src="../../assets/Mark_RGB_Orange.png" alt="errr"></button>
+            <button (click)="chatbutton()"><img src="../../assets/selfchat logo.png" alt="errr"></button>
 
         </div>
     </div>
@@ -21,9 +21,9 @@
                     <button (click)="minimizebutton()">-</button>
                     <div class="agentdata">
                         <h6>LIVE CHAT</h6>
-                        <p>pre chat survey</p>
+                        <p *ngIf="agentofflinered"  [ngClass]="{ 'onlinegreen': agentonlinestatus=='agent is online','offlinered':agentonlinestatus=='agent is offline'}" >{{agentonlinestatus}}</p>
                     </div>
-                    <button (click)="existbutton()">X</button>
+                    <button class="xinto" (click)="existbutton()">X</button>
                 </div>
 
             </div>
@@ -32,7 +32,7 @@
 
 
 
-            <form [formGroup]="registerdata" (ngSubmit)="submitdata(registerdata)" *ngIf="b">
+            <form style="height: 60vh;" [formGroup]="registerdata" (ngSubmit)="submitdata(registerdata)" *ngIf="b" classs="formGroupbox">
 
                 <div class="container1">
 
@@ -124,11 +124,13 @@
     </div>
     </div>
 
-    
+    <div class="msgoftying">
+        <p>{{typingmsg}}</p>
+    </div>
 
     <form [formGroup]="registerdataofcon2" (ngSubmit)="submitdataofcon2($event)">
         <div class="con2data">
-            <input type="text" name="name" id="name" formControlName="textdata" placeholder="Type Your Message">
+            <input type="text" name="name" id="name" formControlName="textdata" placeholder="Type Your Message"   (focus)="onFocus()" (blur)="onBlur()"  >
             <button><img src="../../assets/Send-PNG-Image.png" alt="send"></button>
         </div>
     </form>

@@ -9,8 +9,8 @@
     border: 2px solid white;
     display: flex;
     flex-direction: column;
-    width: 287px;
-    height: 255px;
+    width: 331px;
+    height: 316px;
     margin: 26vh 50vw;
     align-items: center;
     background-color: white;
@@ -21,7 +21,7 @@
 margin: 15px;
 }
 .main .con1data label{
-    font-size: 12px;
+    font-size: 14px;
     }
 .main .con1data .email input{
 
@@ -29,6 +29,8 @@ margin: 15px;
     border: none;
     outline: none;
     border-radius: 6px;
+    height: 36px;
+    font-size: 17px;
 
     }
     .main .con1data .pass input{
@@ -37,13 +39,16 @@ margin: 15px;
         border: none;
         outline: none;
         border-radius: 6px;
-    
+        height: 36px;
+        font-size: 17px;
         }
         .main .con1data .submit{
-      width: 184px;
-    background-color: #3f3fd5;
-    outline: none;
-    border: none;
-    color: wheat;
-    border-radius: 5px;
+            width: 196px;
+            background-color: #3f3fd5;
+            outline: none;
+            border: none;
+            color: wheat;
+            border-radius: 5px;
+            height: 38px;
+        
 }
