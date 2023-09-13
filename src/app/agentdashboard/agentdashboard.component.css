@@ -243,3 +243,25 @@ justify-content: center;
 .con1 .con1clientdata img{
   width: 34px;
 }
+.container1onbuttonclick .sidebardetailscon1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/* .container1onbuttonclick .xdotbox .threedots{
+margin-right: 11px;
+margin-top: 3px;
+} */
+.container1onbuttonclick{
+  position: relative;
+}
+
+.container1onbuttonclick .allcheckboxofdetails{
+  position: absolute;
+  top: 82px;
+  right: 10px;
+  border: 1px solid #cfcdcd;
+  background-color: white;
+  border-radius: 13px;
+  padding: 22px 14px;
+}

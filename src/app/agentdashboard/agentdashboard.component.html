@@ -114,21 +114,36 @@
                     <img src="../../assets/profile-icon.png" alt="img1">
                 </div>
 
-                <div class="sigdebarrightimgdata" (click)="rightsideimgbuttonofexist()">
-                    <img class="existbuttonofsidebar" src="../../assets/cross-icon.png" alt="img1">
+                <div class="sigdebarrightimgdata" (click)="rightsideimgbuttonofexist()" >
+                    
+                        <img class="existbuttonofsidebar" src="../../assets/cross-icon.png" alt="img1">
+                    
                 </div>
             </div>
 
 
             <div class="sidebardetailscon1">
                 <h6>Details</h6>
+                <div class="threedots" (click)="rightside3dotsforabox()">
+                    <i style="font-size:24px" class="fa">&#xf141;</i>
+                </div>
             </div>
 
-            <div class="sidebardetailscon2">
+
+            <div class="allcheckboxofdetails"  *ngIf="checkboxdisplay">
+                <div class="loopofcheckbox" *ngFor="let ite of checkboxdetailsdata">
+                    <input type="checkbox" id="ite.id" [(ngModel)]="ite.state" (click)="onclickcheckbox(ite)">
+                   <label for="ite.id" >{{ite.name}}</label>
+                </div>
+               
+            </div>
+
+
+            <div class="sidebardetailscon2" *ngIf="generalbox">
                 <h6>General Info</h6>
                 <div  class="sidebardetailscon2clientdata">
-                    <img src="{{currentclienddataarray.src}}" alt="">
-                 <span class="dataofclient"> {{currentclienddataarray.name}}</span>  
+                    <img src="{{srcoftheclient}}" alt="">
+                 <span class="dataofclient"> {{nameoftheclient}}</span>  
                     
                 </div>
                 <ul>
@@ -138,19 +153,19 @@
 
             </div>
 
-            <div class="sidebardetailscon3">
+            <div class="sidebardetailscon3" *ngIf="prechatbox">
                 <h6>Pre-chat Info</h6>
                 <ul >
-                    <li>name:{{currentclienddataarray.name}}</li>
-                    <li>email: {{currentclienddataarray.email}} </li>
+                    <li>name:{{ nameoftheclient}}</li>
+                    <li>email: {{ emailoftheclient}} </li>
                 </ul>
             </div>
-            <div class="sidebardetailscon3">
+            <div class="sidebardetailscon3" *ngIf="additionalbox">
                 <h6>Additional Info</h6>
                 <ul >
-                    <li>ip:{{currentclienddataarray.clientIP}}</li>
-                    <li>Browser: {{currentclienddataarray.browserInfo.name}} </li>
-                    <li>Version: {{currentclienddataarray.browserInfo.version}} </li>
+                    <li>ip:{{clientipoftheclient}}</li>
+                    <li>Browser: {{browsernameoftheclient}} </li>
+                    <li>Version: {{browserversionoftheclient }} </li>
 
                 </ul>
             </div>

@@ -28,12 +28,27 @@ export class AgentdashboardComponent {
   nameoftheclient: any
   emailoftheclient: any
   idoftheclient: any
+  srcoftheclient:any 
+  clientipoftheclient:any
+  browsernameoftheclient:any
+  browserversionoftheclient :any
   onlinestatusofclient: any
   onlinestatusofclienttruefalse: any
   onlinestatusofclienttruefalse1: any
   onlineagentstatus:boolean=true
   typingmsg:any
   inputbuttononload:boolean=true
+  generalbox:any;
+prechatbox:any;
+additionalbox:any;
+checkboxdisplay:boolean=false
+
+
+checkboxdetailsdata:any[]=[
+  {id:1,name:'generalinfo',state:true},
+  {id:2,name:'pre chat',state:true},
+  {id:3,name:'additional info',state:true}]
+
 
   constructor(private homesocketService: AgentpagesocketService, private router: Router, private agentmainservice: AgentpagemainService, private ngZone: NgZone) { }
 
@@ -72,10 +87,34 @@ export class AgentdashboardComponent {
   this.scrollToBottom();
   }
 
-  ngOnInit() {
+  onclickcheckbox(ite:any){
+
+console.log(ite)
+console.log(ite.state)
 
 
+  if(ite.name=='generalinfo'){
+    this.generalbox=!ite.state
+  }
+  if(ite.name=='pre chat'){
+    this.prechatbox=!ite.state
+  }
+  if(ite.name=='additional info'){
+    this.additionalbox=!ite.state
+  }
   
+  }
+
+  ngOnInit() {
+    this.generalbox=this.checkboxdetailsdata[0].state
+    console.log(this.checkboxdetailsdata[0].state)
+    this.prechatbox=this.checkboxdetailsdata[1].state
+    this.additionalbox=this.checkboxdetailsdata[2].state
+    // this.generalbox=true
+    // console.log(this.checkboxdetailsdata[0].state)
+    // this.prechatbox=true
+    // this.additionalbox=this.checkboxdetailsdata[2].state
+
 
     this.inputbuttononload=false;
     
@@ -248,9 +287,7 @@ export class AgentdashboardComponent {
 
     }
 
-   
   
-    
   
     this.agentmainservice.singledataarray(data).subscribe((res) => {
       console.log(res.mydata)
@@ -261,6 +298,10 @@ export class AgentdashboardComponent {
         this.idoftheclient= res.mydata._id
         this.nameoftheclient = res.mydata.name
         this.emailoftheclient = res.mydata.email
+        this.srcoftheclient= this.currentclienddataarray.src
+        this.clientipoftheclient = res.mydata.clientIP
+        this.browsernameoftheclient = res.mydata.browserInfo.name
+        this.browserversionoftheclient = res.mydata.browserInfo.version
         if (res.mydata.onlinestaus == true) {
           this.onlinestatusofclient = 'Online'
 
@@ -361,6 +402,16 @@ onBlur(){
   this.homesocketService.stopTyping(this.idoftheclient);
 }
 
+
+
+ 
+  //  checkboxtruefalse:boolean=false
+  
+
+rightside3dotsforabox(){
+  this.checkboxdisplay=true
+
+}
 
 }
 
